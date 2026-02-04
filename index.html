@@ -25,18 +25,15 @@
   </script>
 </head>
 <body class="min-h-screen bg-background font-mono">
-  <div id="file-protocol-notice" class="hidden fixed top-0 left-0 right-0 z-[100] bg-primary text-primary-foreground py-3 px-4 text-center text-sm font-medium">
-    For best results, open this site with a local server. In this folder run: <code class="bg-black/30 px-2 py-1 rounded">python -m http.server 8080</code> and visit <a href="http://localhost:8080" class="underline">http://localhost:8080</a>.
-  </div>
-  <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
-    <div class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+  <nav class="main-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
+    <div class="nav-header container mx-auto px-4 sm:px-6 py-3 sm:py-4 relative z-[52] bg-background md:bg-transparent border-b border-transparent md:border-none">
       <div class="flex items-center justify-between">
         <div class="python-text text-base sm:text-lg font-semibold">
           <span class="text-muted-foreground">&gt;&gt;&gt;</span> portfolio
         </div>
-        <button type="button" class="md:hidden p-2 -mr-2 text-muted-foreground hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 rounded" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
-          <i data-lucide="menu" class="w-6 h-6" id="nav-icon-menu" aria-hidden="true"></i>
-          <i data-lucide="x" class="w-6 h-6 hidden" id="nav-icon-close" aria-hidden="true"></i>
+        <button type="button" class="md:hidden p-3 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 rounded cursor-pointer touch-manipulation" id="nav-toggle" data-testid="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span data-lucide="menu" class="w-6 h-6" id="nav-icon-menu" aria-hidden="true"></span>
+          <span data-lucide="x" class="w-6 h-6 hidden" id="nav-icon-close" aria-hidden="true"></span>
         </button>
         <div class="hidden md:flex items-center gap-6 lg:gap-8" id="nav-desktop">
           <a href="#about" class="nav-link">about()</a>
@@ -48,20 +45,20 @@
         </div>
       </div>
     </div>
-    <div class="absolute top-full left-0 right-0 md:hidden bg-background border-b border-border shadow-lg py-4 px-6 hidden" id="nav-mobile">
-      <div class="flex flex-col gap-4">
-        <a href="#about" class="nav-link py-2">about()</a>
-        <a href="#experience" class="nav-link py-2">experience()</a>
-        <a href="#education" class="nav-link py-2">education()</a>
-        <a href="#skills" class="nav-link py-2">skills()</a>
-        <a href="#projects" class="nav-link py-2">projects()</a>
-        <a href="#contact" class="nav-link py-2">contact()</a>
+    <div class="nav-mobile-panel md:hidden" id="nav-mobile" aria-hidden="true">
+      <div class="nav-mobile-inner">
+        <a href="#about" class="nav-mobile-link">about()</a>
+        <a href="#experience" class="nav-mobile-link">experience()</a>
+        <a href="#education" class="nav-mobile-link">education()</a>
+        <a href="#skills" class="nav-mobile-link">skills()</a>
+        <a href="#projects" class="nav-mobile-link">projects()</a>
+        <a href="#contact" class="nav-mobile-link">contact()</a>
       </div>
     </div>
   </nav>
 
   <main>
-  <section class="min-h-screen flex items-center justify-center relative px-6">
+  <section class="min-h-screen flex items-center justify-center relative px-6 pt-24 md:pt-0">
     <div class="text-center max-w-4xl mx-auto">
       <div class="mb-6">
         <span class="text-muted-foreground text-sm tracking-wider"># Backend Developer</span>
@@ -82,21 +79,21 @@
           <span>}</span>
         </code>
       </div>
-      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-8">
-        <a href="mailto:samucriado@gmail.com" class="text-muted-foreground hover:text-primary transition-colors" aria-label="Email">
-          <i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i>
+      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-8 hero-icons">
+        <a href="mailto:samucriado@gmail.com" class="hero-icon" aria-label="Email">
+          <span data-lucide="mail" class="w-5 h-5" aria-hidden="true"></span>
         </a>
-        <a href="https://github.com/sunr4y" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">
-          <i data-lucide="github" class="w-5 h-5" aria-hidden="true"></i>
+        <a href="https://github.com/sunr4y" target="_blank" rel="noopener noreferrer" class="hero-icon" aria-label="GitHub">
+          <span data-lucide="github" class="w-5 h-5" aria-hidden="true"></span>
         </a>
-        <a href="https://linkedin.com/in/samuel-criado/" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
-          <i data-lucide="linkedin" class="w-5 h-5" aria-hidden="true"></i>
+        <a href="https://linkedin.com/in/samuel-criado/" target="_blank" rel="noopener noreferrer" class="hero-icon" aria-label="LinkedIn">
+          <span data-lucide="linkedin" class="w-5 h-5" aria-hidden="true"></span>
         </a>
       </div>
       <div class="flex justify-center">
         <a href="#projects" class="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300">
           <span class="text-sm">View Projects</span>
-          <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform" aria-hidden="true"></i>
+          <span data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform" aria-hidden="true"></span>
         </a>
       </div>
     </div>
@@ -167,7 +164,7 @@
           </div>
         </div>
         <div class="flex gap-4 border-l-2 border-primary pl-6">
-          <div class="w-12 h-12 rounded-lg bg-muted/30 border border-border flex items-center justify-center shrink-0" aria-hidden="true"><i data-lucide="footprints" class="w-6 h-6 text-muted-foreground" aria-hidden="true"></i></div>
+          <div class="w-12 h-12 rounded-lg bg-muted/30 border border-border flex items-center justify-center shrink-0" aria-hidden="true"><span data-lucide="footprints" class="w-6 h-6 text-muted-foreground" aria-hidden="true"></span></div>
           <div>
             <h3 class="text-xl font-bold text-foreground">Self-Employed</h3>
             <p class="text-muted-foreground text-sm mt-1">Wholesale Footwear Business · Granada · Nov 2020 – July 2024</p>
@@ -308,9 +305,9 @@
         <a href="#fkapi" class="project-card p-8 cursor-pointer group block">
           <div class="flex items-start justify-between mb-6">
             <div class="p-3 bg-primary/10 rounded-lg">
-              <i data-lucide="globe" class="w-6 h-6 text-primary" aria-hidden="true"></i>
+              <span data-lucide="globe" class="w-6 h-6 text-primary" aria-hidden="true"></span>
             </div>
-            <i data-lucide="arrow-right" class="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" aria-hidden="true"></i>
+            <span data-lucide="arrow-right" class="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" aria-hidden="true"></span>
           </div>
           <h3 class="text-2xl font-bold text-foreground mb-3">FKApi</h3>
           <p class="text-muted-foreground mb-4">
@@ -343,9 +340,9 @@
         <a href="#footycollect" class="project-card p-8 cursor-pointer group block">
           <div class="flex items-start justify-between mb-6">
             <div class="p-3 bg-accent/10 rounded-lg">
-              <i data-lucide="database" class="w-6 h-6 text-accent" aria-hidden="true"></i>
+              <span data-lucide="database" class="w-6 h-6 text-accent" aria-hidden="true"></span>
             </div>
-            <i data-lucide="arrow-right" class="w-5 h-5 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all" aria-hidden="true"></i>
+            <span data-lucide="arrow-right" class="w-5 h-5 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all" aria-hidden="true"></span>
           </div>
           <h3 class="text-2xl font-bold text-foreground mb-3">FootyCollect</h3>
           <p class="text-muted-foreground mb-4">
@@ -398,7 +395,7 @@
               <span class="python-text glow-text">FKApi</span>
             </h2>
             <a href="https://github.com/sunr4y/fkapi/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors" aria-label="FKApi on GitHub">
-              <i data-lucide="github" class="w-5 h-5" aria-hidden="true"></i>
+              <span data-lucide="github" class="w-5 h-5" aria-hidden="true"></span>
               <span>GitHub</span>
             </a>
           </div>
@@ -408,7 +405,7 @@
           <div class="project-features project-features--primary space-y-4 mb-8">
             <div class="flex items-start gap-4">
               <div class="p-2 bg-primary/10 rounded-lg mt-1">
-                <i data-lucide="globe" class="w-5 h-5 text-primary" aria-hidden="true"></i>
+                <span data-lucide="globe" class="w-5 h-5 text-primary" aria-hidden="true"></span>
               </div>
               <div>
                 <h4 class="font-medium text-foreground">Ethical Web Scraping</h4>
@@ -417,7 +414,7 @@
             </div>
             <div class="flex items-start gap-4">
               <div class="p-2 bg-primary/10 rounded-lg mt-1">
-                <i data-lucide="code" class="w-5 h-5 text-primary" aria-hidden="true"></i>
+                <span data-lucide="code" class="w-5 h-5 text-primary" aria-hidden="true"></span>
               </div>
               <div>
                 <h4 class="font-medium text-foreground">RESTful API (Django Ninja)</h4>
@@ -426,7 +423,7 @@
             </div>
             <div class="flex items-start gap-4">
               <div class="p-2 bg-primary/10 rounded-lg mt-1">
-                <i data-lucide="zap" class="w-5 h-5 text-primary" aria-hidden="true"></i>
+                <span data-lucide="zap" class="w-5 h-5 text-primary" aria-hidden="true"></span>
               </div>
               <div>
                 <h4 class="font-medium text-foreground">Performance</h4>
@@ -485,7 +482,7 @@
               <span class="text-accent footycollect-glow">FootyCollect</span>
             </h2>
             <a href="https://github.com/sunr4y/FootyCollect" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors" aria-label="FootyCollect on GitHub">
-              <i data-lucide="github" class="w-5 h-5" aria-hidden="true"></i>
+              <span data-lucide="github" class="w-5 h-5" aria-hidden="true"></span>
               <span>GitHub</span>
             </a>
           </div>
@@ -495,7 +492,7 @@
           <div class="project-features project-features--accent space-y-4 mb-8">
             <div class="flex items-start gap-4">
               <div class="p-2 bg-accent/10 rounded-lg mt-1">
-                <i data-lucide="layers" class="w-5 h-5 text-accent" aria-hidden="true"></i>
+                <span data-lucide="layers" class="w-5 h-5 text-accent" aria-hidden="true"></span>
               </div>
               <div>
                 <h4 class="font-medium text-foreground">Multi-Item Types & Search</h4>
@@ -504,7 +501,7 @@
             </div>
             <div class="flex items-start gap-4">
               <div class="p-2 bg-accent/10 rounded-lg mt-1">
-                <i data-lucide="link" class="w-5 h-5 text-accent" aria-hidden="true"></i>
+                <span data-lucide="link" class="w-5 h-5 text-accent" aria-hidden="true"></span>
               </div>
               <div>
                 <h4 class="font-medium text-foreground">FKApi Integration</h4>
@@ -513,7 +510,7 @@
             </div>
             <div class="flex items-start gap-4">
               <div class="p-2 bg-accent/10 rounded-lg mt-1">
-                <i data-lucide="image" class="w-5 h-5 text-accent" aria-hidden="true"></i>
+                <span data-lucide="image" class="w-5 h-5 text-accent" aria-hidden="true"></span>
               </div>
               <div>
                 <h4 class="font-medium text-foreground">Photos, Profiles & API</h4>
@@ -560,13 +557,13 @@
       </p>
       <div class="flex justify-center gap-6 mb-12">
         <a href="mailto:samucriado@gmail.com" class="p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-all duration-300 group" aria-label="Email">
-          <i data-lucide="mail" class="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true"></i>
+          <span data-lucide="mail" class="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true"></span>
         </a>
         <a href="https://github.com/sunr4y" target="_blank" rel="noopener noreferrer" class="p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-all duration-300 group" aria-label="GitHub">
-          <i data-lucide="github" class="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true"></i>
+          <span data-lucide="github" class="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true"></span>
         </a>
         <a href="https://linkedin.com/in/samuel-criado/" target="_blank" rel="noopener noreferrer" class="p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-all duration-300 group" aria-label="LinkedIn">
-          <i data-lucide="linkedin" class="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true"></i>
+          <span data-lucide="linkedin" class="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true"></span>
         </a>
       </div>
       <p class="text-muted-foreground text-sm mb-4">samucriado@gmail.com · Granada, Spain</p>
@@ -587,8 +584,9 @@
   </footer>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <script src="js/app.js"></script>
   <script src="js/init.js"></script>
+  <script src="js/app.js"></script>
   <script type="module" src="js/scene-init.js"></script>
+  <script src="js/tracking.js" async></script>
 </body>
 </html>

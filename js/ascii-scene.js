@@ -60,6 +60,10 @@ export function createAsciiScene(container, asciiData, options = {}) {
           textMeshes.push(mesh);
         });
       });
+    },
+    undefined,
+    function () {
+      console.warn('Ascii scene font failed to load');
     }
   );
 
