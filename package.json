@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "build": "postcss css/source.css -o css/styles.css",
-    "build:watch": "postcss css/source.css -o css/styles.css --watch",
-    },
+    "build:watch": "postcss css/source.css -o css/styles.css --watch"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
