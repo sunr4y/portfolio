@@ -50,12 +50,6 @@ html {
   scrollbar-color: hsl(var(--border)) hsl(var(--background));
 }
 
-body {
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
-  font-family: 'JetBrains Mono', monospace;
-}
-
 .terminal-text,
 .python-text {
   font-family: 'JetBrains Mono', monospace;
