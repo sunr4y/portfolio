@@ -2,6 +2,27 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+
+const CAMERA_FOV = 50;
+const CAMERA_NEAR = 0.1;
+const CAMERA_FAR = 2000;
+const CAMERA_DISTANCE_FACTOR = 1.3;
+const AMBIENT_LIGHT_INTENSITY = 0.3;
+const PIXEL_RATIO_MAX = 2;
+const TONE_MAPPING_EXPOSURE = 1.5;
+const CHAR_HEIGHT = 1;
+const CHAR_ASPECT = 0.6;
+const TEXT_DEPTH = 0.02;
+const CURVE_SEGMENTS = 2;
+const Z_POSITION_SCALE = 10;
+const ROTATION_LERP_FACTOR = 0.1;
+const SCROLL_ROTATION_RANGE = 100;
+const SCROLL_ROTATION_OFFSET = 50;
+const DEG_TO_RAD = Math.PI / 180;
+const CONTROLS_DAMPING_FACTOR = 0.05;
+const FONT_URL = 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/fonts/helvetiker_regular.typeface.json';
+const DEFAULT_COLOR = '#ffffff';
+
 export function createAsciiScene(container, asciiData, options = {}) {
   const emissiveIntensity = options.emissiveIntensity ?? 0.6;
 
@@ -9,24 +30,24 @@ export function createAsciiScene(container, asciiData, options = {}) {
   scene.background = null;
 
   const aspect = container.clientWidth / container.clientHeight;
-  const camera = new THREE.PerspectiveCamera(50, aspect, 0.1, 2000);
+  const camera = new THREE.PerspectiveCamera(CAMERA_FOV, aspect, CAMERA_NEAR, CAMERA_FAR);
   const maxDim = Math.max(asciiData.dimensions.width, asciiData.dimensions.height);
-  camera.position.set(0, 0, maxDim * 1.3);
+  camera.position.set(0, 0, maxDim * CAMERA_DISTANCE_FACTOR);
   camera.lookAt(0, 0, 0);
 
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+  const ambientLight = new THREE.AmbientLight(0xffffff, AMBIENT_LIGHT_INTENSITY);
   scene.add(ambientLight);
 
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, PIXEL_RATIO_MAX));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.setClearColor(0x000000, 0);
   renderer.domElement.classList.add('scene-canvas');
   container.appendChild(renderer.domElement);
 
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.5;
+  renderer.toneMappingExposure = TONE_MAPPING_EXPOSURE;
 
   const meshGroup = new THREE.Group();
   scene.add(meshGroup);
@@ -34,28 +55,26 @@ export function createAsciiScene(container, asciiData, options = {}) {
   const textMeshes = [];
   const fontLoader = new FontLoader();
   fontLoader.load(
-    'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/fonts/helvetiker_regular.typeface.json',
+    FONT_URL,
     function (font) {
-      const charHeight = 1;
-      const charAspect = 0.6;
       asciiData.groups.forEach(function (group) {
         group.instances.forEach(function (inst) {
           const textGeometry = new TextGeometry(group.char, {
             font: font,
-            size: charHeight,
-            height: 0.02,
-            curveSegments: 2,
+            size: CHAR_HEIGHT,
+            height: TEXT_DEPTH,
+            curveSegments: CURVE_SEGMENTS,
           });
           textGeometry.center();
-          textGeometry.scale(charAspect, 1, 1);
+          textGeometry.scale(CHAR_ASPECT, 1, 1);
           const material = new THREE.MeshStandardMaterial({
-            color: inst.color || '#ffffff',
-            emissive: inst.color || '#ffffff',
+            color: inst.color || DEFAULT_COLOR,
+            emissive: inst.color || DEFAULT_COLOR,
             emissiveIntensity: emissiveIntensity,
             toneMapped: false,
           });
           const mesh = new THREE.Mesh(textGeometry, material);
-          mesh.position.set(inst.x, inst.y, inst.z * 10);
+          mesh.position.set(inst.x, inst.y, inst.z * Z_POSITION_SCALE);
           meshGroup.add(mesh);
           textMeshes.push(mesh);
         });
@@ -69,18 +88,17 @@ export function createAsciiScene(container, asciiData, options = {}) {
 
   let targetRotation = 0;
   let currentRotation = 0;
-  const degToRad = Math.PI / 180;
   function onScroll() {
     const maxScroll = document.body.scrollHeight - window.innerHeight;
     if (maxScroll <= 0) return;
     const scroll = window.scrollY / maxScroll;
-    targetRotation = (scroll * 100 - 50) * degToRad;
+    targetRotation = (scroll * SCROLL_ROTATION_RANGE - SCROLL_ROTATION_OFFSET) * DEG_TO_RAD;
   }
   window.addEventListener('scroll', onScroll, { passive: true });
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
-  controls.dampingFactor = 0.05;
+  controls.dampingFactor = CONTROLS_DAMPING_FACTOR;
   controls.screenSpacePanning = true;
 
   function onWindowResize() {
@@ -101,14 +119,27 @@ export function createAsciiScene(container, asciiData, options = {}) {
   let animationId = null;
   function animate() {
     animationId = requestAnimationFrame(animate);
-    currentRotation += (targetRotation - currentRotation) * 0.1;
+    currentRotation += (targetRotation - currentRotation) * ROTATION_LERP_FACTOR;
     meshGroup.rotation.y = currentRotation;
     controls.update();
     renderer.render(scene, camera);
   }
 
+  function pause() {
+    if (animationId != null) {
+      cancelAnimationFrame(animationId);
+      animationId = null;
+    }
+  }
+
+  function resume() {
+    if (animationId == null) {
+      animate();
+    }
+  }
+
   function dispose() {
-    if (animationId) cancelAnimationFrame(animationId);
+    pause();
     window.removeEventListener('resize', onWindowResize);
     window.removeEventListener('scroll', onScroll);
     ro.disconnect();
@@ -125,5 +156,5 @@ export function createAsciiScene(container, asciiData, options = {}) {
     controls.dispose();
   }
 
-  return { scene, camera, renderer, animate, dispose };
+  return { scene, camera, renderer, animate, pause, resume, dispose };
 }

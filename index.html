@@ -12,8 +12,6 @@
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="assets/favicon.ico" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="js/tailwind-config.js"></script>
   <link rel="stylesheet" href="css/styles.css" />
   <script type="importmap">
   {
@@ -25,6 +23,7 @@
   </script>
 </head>
 <body class="min-h-screen bg-background font-mono">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav class="main-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
     <div class="nav-header container mx-auto px-4 sm:px-6 py-3 sm:py-4 relative z-[52] bg-background md:bg-transparent border-b border-transparent md:border-none">
       <div class="flex items-center justify-between">
@@ -57,7 +56,7 @@
     </div>
   </nav>
 
-  <main>
+  <main id="main-content">
   <section class="min-h-screen flex items-center justify-center relative px-6 pt-24 md:pt-0">
     <div class="text-center max-w-4xl mx-auto">
       <div class="mb-6">
@@ -477,12 +476,16 @@
           <div class="section-title">
             <span class="text-accent">#</span> Project 02
           </div>
-          <div class="flex flex-wrap items-center gap-3 mb-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-foreground">
-              <span class="text-accent footycollect-glow">FootyCollect</span>
-            </h2>
-            <a href="https://github.com/sunr4y/FootyCollect" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors" aria-label="FootyCollect on GitHub">
-              <span data-lucide="github" class="w-5 h-5" aria-hidden="true"></span>
+          <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <span class="text-accent footycollect-glow">FootyCollect</span>
+          </h2>
+          <div class="project-actions mb-6">
+            <a href="https://footycollect-demo.sunr4y.dev/" target="_blank" rel="noopener" class="demo-cta" aria-label="FootyCollect demo">
+              <span data-lucide="external-link" class="demo-cta-icon" aria-hidden="true"></span>
+              <span class="demo-glow-text">View demo</span>
+            </a>
+            <a href="https://github.com/sunr4y/FootyCollect" target="_blank" rel="noopener noreferrer" class="project-actions-gh" aria-label="FootyCollect on GitHub">
+              <span data-lucide="github" class="w-4 h-4" aria-hidden="true"></span>
               <span>GitHub</span>
             </a>
           </div>
@@ -583,9 +586,10 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/app.js"></script>
+  <noscript><p class="p-4 text-center text-muted-foreground bg-muted/50">This site uses JavaScript for icons and interactive content. Please enable JavaScript for the full experience.</p></noscript>
+  <script src="https://unpkg.com/lucide@0.563.0/dist/umd/lucide.min.js" defer></script>
+  <script src="js/init.js" defer></script>
+  <script src="js/app.js" defer></script>
   <script type="module" src="js/scene-init.js"></script>
   <script src="js/tracking.js" async></script>
 </body>

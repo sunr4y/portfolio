@@ -1,4 +1,6 @@
-tailwind.config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./index.html', './js/app.js', './js/init.js', './js/ascii-scene.js', './js/scene-init.js'],
   theme: {
     extend: {
       colors: {
@@ -10,7 +12,6 @@ tailwind.config = {
         secondary: { DEFAULT: 'hsl(0 0% 12%)', foreground: 'hsl(0 0% 90%)' },
         muted: { DEFAULT: 'hsl(0 0% 15%)', foreground: 'hsl(0 0% 55%)' },
         accent: { DEFAULT: '#32b8c6', foreground: 'hsl(0 0% 4%)' },
-        accent2: '#326EC6',
         border: 'hsl(0 0% 18%)',
       },
       fontFamily: {
@@ -19,4 +20,5 @@ tailwind.config = {
       },
     },
   },
+  plugins: [],
 };
