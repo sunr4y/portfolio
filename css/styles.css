@@ -28,6 +28,9 @@
   --terminal-cyan: 187 61% 44%;
   --terminal-glow: 187 61% 44%;
   --code-bg: 0 0% 8%;
+  --sap-blue: #0070f2;
+  --sap-blue-rgb: 0, 112, 242;
+  --sap-blue-dim: hsl(210 100% 47% / 0.15);
 }
 
 :where(body, body *) {
@@ -419,6 +422,399 @@ nav {
   outline-offset: 2px;
 }
 
+.sap-text {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--sap-blue);
+  text-shadow: 0 0 10px rgba(var(--sap-blue-rgb), 0.35);
+}
+
+.text-sap-blue {
+  color: var(--sap-blue);
+}
+
+.badge-training {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  border: 1px solid rgba(var(--sap-blue-rgb), 0.35);
+  background: var(--sap-blue-dim);
+  color: var(--sap-blue);
+}
+
+.education-card--featured {
+  border-color: rgba(var(--sap-blue-rgb), 0.35);
+  box-shadow: 0 0 24px rgba(var(--sap-blue-rgb), 0.08);
+}
+
+.education-card--secondary {
+  opacity: 0.92;
+}
+
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card) / 0.4);
+  padding: 1.25rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.cert-card:hover {
+  border-color: rgba(var(--sap-blue-rgb), 0.4);
+  box-shadow: 0 0 24px rgba(var(--sap-blue-rgb), 0.1);
+}
+
+.cert-exam-code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--sap-blue);
+}
+
+.cert-chip {
+  display: inline-flex;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.7rem;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(var(--sap-blue-rgb), 0.25);
+  background: hsl(var(--muted) / 0.2);
+  color: hsl(var(--foreground));
+}
+
+.cert-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.875rem;
+}
+
+.cert-card-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.75rem;
+}
+
+.cert-card-desc {
+  flex: 1;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 1rem;
+}
+
+.cert-card-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .certifications-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .cert-card {
+    padding: 1.5rem;
+  }
+
+  .cert-card-title {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .certifications-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 4rem;
+  }
+}
+
+.learning-section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin-bottom: 1.5rem;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .learning-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+.learning-area {
+  border-radius: 0.5rem;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card) / 0.3);
+  padding: 1.25rem;
+  transition: border-color 0.25s;
+}
+
+.learning-area:hover {
+  border-color: rgba(var(--sap-blue-rgb), 0.25);
+}
+
+.learning-area-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.875rem;
+  line-height: 1.35;
+}
+
+.learning-area-list {
+  list-style: disc;
+  list-style-position: outside;
+  margin-left: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.learning-area-list li {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: hsl(var(--muted-foreground));
+}
+
+.skill-group {
+  margin-bottom: 2rem;
+}
+
+.skill-group:last-child {
+  margin-bottom: 0;
+}
+
+.skill-group-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.875rem;
+}
+
+.skill-group-badge {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.625rem;
+  row-gap: 0.625rem;
+}
+
+.skills-section-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#certifications-content,
+#skills-groups {
+  width: 100%;
+}
+
+.section-sap {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-sap {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-sap {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+.education-card {
+  width: 100%;
+}
+
+.education-card__header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem 1.25rem;
+  border-left: 2px solid var(--sap-blue);
+}
+
+.education-card--secondary .education-card__header {
+  border-left-color: hsl(var(--accent));
+}
+
+.education-card__icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--sap-blue-dim);
+  border: 1px solid rgba(var(--sap-blue-rgb), 0.3);
+  color: var(--sap-blue);
+}
+
+.education-card__body {
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid hsl(var(--border));
+}
+
+.education-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.education-modules {
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid hsl(var(--border));
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.education-module {
+  padding-top: 1rem;
+}
+
+.education-module:first-child {
+  padding-top: 1rem;
+}
+
+#certifications .section-title {
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+.certifications-subtitle {
+  text-align: left;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.9375rem;
+  margin-bottom: 2.5rem;
+  padding: 0 0.5rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  .badge-training {
+    font-size: 0.625rem;
+    padding: 0.15rem 0.5rem;
+  }
+
+  .cert-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skill-chip {
+    font-size: 0.8125rem;
+    padding: 0.4rem 0.75rem;
+  }
+}
+
+.skill-chip {
+  display: inline-flex;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.skill-chip:hover {
+  border-color: hsl(var(--primary) / 0.4);
+}
+
+.skill-chip--sap {
+  border-color: rgba(var(--sap-blue-rgb), 0.3);
+  background: var(--sap-blue-dim);
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.lang-toggle-btn {
+  padding: 0.15rem 0.35rem;
+  color: hsl(var(--muted-foreground));
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.lang-toggle-btn:hover {
+  color: hsl(var(--foreground));
+}
+
+.lang-toggle-btn.is-active {
+  color: var(--sap-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.i18n-en.hidden,
+.i18n-es.hidden {
+  display: none !important;
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -471,10 +867,6 @@ nav {
   --tw-contain-layout:  ;
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
-  box-sizing: border-box; /* 1 */
-  border-width: 0; /* 2 */
-  border-style: solid; /* 2 */
-  border-color: #e5e7eb; /* 2 */
 }
 
 ::backdrop{
@@ -531,12 +923,23 @@ nav {
   --tw-contain-style:  ;
 }
 
-/* ! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com */
+/*
+! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com
+*/
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
 
 ::before,
 ::after {
@@ -921,11 +1324,19 @@ video {
   display: none;
 }
 
+.\!container{
+  width: 100% !important;
+}
+
 .container{
   width: 100%;
 }
 
 @media (min-width: 640px){
+
+  .\!container{
+    max-width: 640px !important;
+  }
 
   .container{
     max-width: 640px;
@@ -934,12 +1345,20 @@ video {
 
 @media (min-width: 768px){
 
+  .\!container{
+    max-width: 768px !important;
+  }
+
   .container{
     max-width: 768px;
   }
 }
 
 @media (min-width: 1024px){
+
+  .\!container{
+    max-width: 1024px !important;
+  }
 
   .container{
     max-width: 1024px;
@@ -948,12 +1367,20 @@ video {
 
 @media (min-width: 1280px){
 
+  .\!container{
+    max-width: 1280px !important;
+  }
+
   .container{
     max-width: 1280px;
   }
 }
 
 @media (min-width: 1536px){
+
+  .\!container{
+    max-width: 1536px !important;
+  }
 
   .container{
     max-width: 1536px;
@@ -1049,8 +1476,8 @@ video {
   margin-bottom: 2rem;
 }
 
-.ml-4{
-  margin-left: 1rem;
+.ml-2{
+  margin-left: 0.5rem;
 }
 
 .mt-1{
@@ -1161,6 +1588,10 @@ video {
   width: 100%;
 }
 
+.min-w-0{
+  min-width: 0px;
+}
+
 .min-w-\[44px\]{
   min-width: 44px;
 }
@@ -1179,6 +1610,10 @@ video {
 
 .max-w-xl{
   max-width: 36rem;
+}
+
+.flex-1{
+  flex: 1 1 0%;
 }
 
 .shrink-0{
@@ -1288,14 +1723,14 @@ video {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
-.space-y-8 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-y-reverse: 0;
-  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
-}
-
 .overflow-hidden{
   overflow: hidden;
+}
+
+.truncate{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .rounded{
@@ -1326,9 +1761,12 @@ video {
   border-top-width: 1px;
 }
 
-.border-accent{
-  --tw-border-opacity: 1;
-  border-color: rgb(50 184 198 / var(--tw-border-opacity, 1));
+.border-\[rgba\(var\(--sap-blue-rgb\)\2c 0\.3\)\]{
+  border-color: rgba(var(--sap-blue-rgb),0.3);
+}
+
+.border-\[var\(--sap-blue\)\]{
+  border-color: var(--sap-blue);
 }
 
 .border-border{
@@ -1343,6 +1781,10 @@ video {
 
 .border-transparent{
   border-color: transparent;
+}
+
+.bg-\[var\(--sap-blue-dim\)\]{
+  background-color: var(--sap-blue-dim);
 }
 
 .bg-accent\/10{
@@ -1424,6 +1866,10 @@ video {
   padding: 1rem;
 }
 
+.p-5{
+  padding: 1.25rem;
+}
+
 .p-6{
   padding: 1.5rem;
 }
@@ -1452,11 +1898,6 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.py-2{
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
 .py-20{
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -1482,8 +1923,8 @@ video {
   padding-bottom: 2rem;
 }
 
-.pb-4{
-  padding-bottom: 1rem;
+.pb-6{
+  padding-bottom: 1.5rem;
 }
 
 .pl-6{
@@ -1662,6 +2103,10 @@ video {
   color: rgb(50 110 198 / var(--tw-text-opacity, 1));
 }
 
+.hover\:underline:hover{
+  text-decoration-line: underline;
+}
+
 .focus\:text-foreground:focus{
   --tw-text-opacity: 1;
   color: hsl(0 0% 90% / var(--tw-text-opacity, 1));
@@ -1708,6 +2153,16 @@ video {
     min-height: 70vh;
   }
 
+  .sm\:space-y-8 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+  }
+
+  .sm\:p-6{
+    padding: 1.5rem;
+  }
+
   .sm\:px-4{
     padding-left: 1rem;
     padding-right: 1rem;
@@ -1730,6 +2185,11 @@ video {
 
   .sm\:text-lg{
     font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .sm\:text-xl{
+    font-size: 1.25rem;
     line-height: 1.75rem;
   }
 }
@@ -1806,8 +2266,8 @@ video {
     gap: 4rem;
   }
 
-  .lg\:gap-8{
-    gap: 2rem;
+  .lg\:gap-6{
+    gap: 1.5rem;
   }
 
   .lg\:p-8{

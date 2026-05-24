@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Samuel Criado — Backend Developer</title>
-  <meta name="description" content="Backend developer with experience in Django, Flask and FastAPI, focused on creating reliable and scalable APIs. Granada, Spain." />
+  <title>Samuel Criado — ABAP Backend Developer · In Training</title>
+  <meta name="description" content="ABAP backend developer in training (ABAP Cloud, SAP BTP). Python &amp; API background. Granada, Spain." />
   <meta name="author" content="Samuel Criado" />
-  <meta property="og:title" content="Samuel Criado — Backend Developer" />
-  <meta property="og:description" content="Backend developer with experience in Django, Flask and FastAPI, focused on creating reliable and scalable APIs." />
+  <meta property="og:title" content="Samuel Criado — SAP Backend Developer · ABAP Cloud · BTP" />
+  <meta property="og:description" content="ABAP backend developer in training (ABAP Cloud, SAP BTP). Python &amp; API background." />
   <meta property="og:type" content="website" />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="assets/favicon.ico" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/sap-sections.css" />
   <script type="importmap">
   {
     "imports": {
@@ -23,59 +24,83 @@
   </script>
 </head>
 <body class="min-h-screen bg-background text-foreground font-mono">
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link" data-i18n="skipLink">Skip to main content</a>
   <nav class="main-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
     <div class="nav-header container mx-auto px-4 sm:px-6 py-3 sm:py-4 relative z-[52] bg-background md:bg-transparent border-b border-transparent md:border-none">
-      <div class="flex items-center justify-between">
-        <div class="python-text text-base sm:text-lg font-semibold">
-          <span class="text-muted-foreground">&gt;&gt;&gt;</span> portfolio
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center gap-4 min-w-0">
+          <div class="sap-text text-base sm:text-lg font-semibold truncate">
+            <span class="text-muted-foreground">&gt;&gt;&gt;</span> portfolio
+          </div>
+          <div class="lang-toggle lang-toggle--mobile shrink-0" role="group" aria-label="Language">
+            <button type="button" class="lang-toggle-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+            <span class="text-muted-foreground" aria-hidden="true">|</span>
+            <button type="button" class="lang-toggle-btn" data-lang="es" aria-pressed="false">ES</button>
+          </div>
         </div>
-        <button type="button" class="md:hidden p-3 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 rounded cursor-pointer touch-manipulation" id="nav-toggle" data-testid="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <button type="button" class="md:hidden p-3 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 rounded cursor-pointer touch-manipulation" id="nav-toggle" data-testid="nav-toggle" data-i18n-attr="aria-label:nav.openMenu" aria-label="Open menu" aria-expanded="false">
           <span data-lucide="menu" class="w-6 h-6" id="nav-icon-menu" aria-hidden="true"></span>
           <span data-lucide="x" class="w-6 h-6 hidden" id="nav-icon-close" aria-hidden="true"></span>
         </button>
-        <div class="hidden md:flex items-center gap-6 lg:gap-8" id="nav-desktop">
-          <a href="#about" class="nav-link">about()</a>
-          <a href="#experience" class="nav-link">experience()</a>
-          <a href="#education" class="nav-link">education()</a>
-          <a href="#skills" class="nav-link">skills()</a>
-          <a href="#projects" class="nav-link">projects()</a>
-          <a href="#contact" class="nav-link">contact()</a>
+        <div class="hidden md:flex items-center gap-4 lg:gap-6" id="nav-desktop">
+          <a href="#about" class="nav-link" data-i18n="nav.about">about()</a>
+          <a href="#experience" class="nav-link" data-i18n="nav.experience">experience()</a>
+          <a href="#education" class="nav-link" data-i18n="nav.education">education()</a>
+          <a href="#certifications" class="nav-link" data-i18n="nav.certifications">certifications()</a>
+          <a href="#skills" class="nav-link" data-i18n="nav.skills">skills()</a>
+          <a href="#projects" class="nav-link" data-i18n="nav.projects">projects()</a>
+          <a href="#contact" class="nav-link" data-i18n="nav.contact">contact()</a>
+          <div class="lang-toggle ml-2" role="group" aria-label="Language">
+            <button type="button" class="lang-toggle-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+            <span class="text-muted-foreground" aria-hidden="true">|</span>
+            <button type="button" class="lang-toggle-btn" data-lang="es" aria-pressed="false">ES</button>
+          </div>
         </div>
       </div>
     </div>
     <div class="nav-mobile-panel md:hidden" id="nav-mobile" aria-hidden="true">
       <div class="nav-mobile-inner">
-        <a href="#about" class="nav-mobile-link">about()</a>
-        <a href="#experience" class="nav-mobile-link">experience()</a>
-        <a href="#education" class="nav-mobile-link">education()</a>
-        <a href="#skills" class="nav-mobile-link">skills()</a>
-        <a href="#projects" class="nav-mobile-link">projects()</a>
-        <a href="#contact" class="nav-mobile-link">contact()</a>
+        <a href="#about" class="nav-mobile-link" data-i18n="nav.about">about()</a>
+        <a href="#experience" class="nav-mobile-link" data-i18n="nav.experience">experience()</a>
+        <a href="#education" class="nav-mobile-link" data-i18n="nav.education">education()</a>
+        <a href="#certifications" class="nav-mobile-link" data-i18n="nav.certifications">certifications()</a>
+        <a href="#skills" class="nav-mobile-link" data-i18n="nav.skills">skills()</a>
+        <a href="#projects" class="nav-mobile-link" data-i18n="nav.projects">projects()</a>
+        <a href="#contact" class="nav-mobile-link" data-i18n="nav.contact">contact()</a>
       </div>
     </div>
   </nav>
 
   <main id="main-content">
-  <section class="min-h-screen flex items-center justify-center relative px-6 pt-24 md:pt-0">
+  <section id="hero" class="min-h-screen flex items-center justify-center relative px-6 pt-24 md:pt-0">
     <div class="text-center max-w-4xl mx-auto">
       <div class="mb-6">
-        <span class="text-muted-foreground text-sm tracking-wider"># Backend Developer</span>
+        <span class="text-muted-foreground text-sm tracking-wider" data-i18n="hero.badge"># ABAP Backend Developer</span>
       </div>
       <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
         <span class="text-foreground">Samuel Criado</span>
         <br />
-        <span class="python-text glow-text">Python · Django · Flask · FastAPI</span>
+        <span class="sap-text glow-text" data-i18n="hero.tagline">ABAP Cloud · SAP BTP · Clean Core</span>
       </h1>
+      <p class="text-muted-foreground mb-6" data-i18n="hero.subtagline">Python &amp; API background · Granada, Spain</p>
       <div class="code-block inline-block mb-6 text-left">
-        <code class="text-muted-foreground">
-          <span class="text-muted-foreground">&gt;&gt;&gt;</span> developer = <span>{</span>
+        <code class="text-muted-foreground text-sm i18n-en">
+          <span class="text-muted-foreground">&gt;&gt;&gt;</span> DATA: ls_dev TYPE REF TO zcl_developer.
           <br />
-          <span class="ml-4 text-accent">"focus"</span><span>:</span> <span class="text-accent">"APIs, Scrapers, Databases"</span>,
+          <span class="text-muted-foreground">&gt;&gt;&gt;</span> ls_dev-&gt;focus = <span class="sap-text">'Backend ABAP Developer'</span>.
           <br />
-          <span class="ml-4 text-accent">"passion"</span><span>:</span> <span class="text-accent">"Clean Architecture"</span>
+          <span class="text-muted-foreground">&gt;&gt;&gt;</span> ls_dev-&gt;stack = <span class="sap-text">'ABAP Cloud · RAP · CDS · BTP'</span>.
           <br />
-          <span>}</span>
+          <span class="text-muted-foreground">&gt;&gt;&gt;</span> ls_dev-&gt;background = <span class="sap-text">'Python · REST APIs · Integration'</span>.
+        </code>
+        <code class="text-muted-foreground text-sm i18n-es hidden">
+          <span class="text-muted-foreground">&gt;&gt;&gt;</span> DATA: ls_dev TYPE REF TO zcl_developer.
+          <br />
+          <span class="text-muted-foreground">&gt;&gt;&gt;</span> ls_dev-&gt;focus = <span class="sap-text">'Desarrollador ABAP backend'</span>.
+          <br />
+          <span class="text-muted-foreground">&gt;&gt;&gt;</span> ls_dev-&gt;stack = <span class="sap-text">'ABAP Cloud · RAP · CDS · BTP'</span>.
+          <br />
+          <span class="text-muted-foreground">&gt;&gt;&gt;</span> ls_dev-&gt;background = <span class="sap-text">'Python · APIs REST · Integración'</span>.
         </code>
       </div>
       <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-8 hero-icons">
@@ -90,8 +115,8 @@
         </a>
       </div>
       <div class="flex justify-center">
-        <a href="#projects" class="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300">
-          <span class="text-sm">View Projects</span>
+        <a href="#certifications" class="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300">
+          <span class="text-sm" data-i18n="hero.cta">View certifications</span>
           <span data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform" aria-hidden="true"></span>
         </a>
       </div>
@@ -102,42 +127,30 @@
   <section id="about" class="py-32 px-6 bg-background">
     <div class="container mx-auto max-w-4xl">
       <div class="section-title">
-        <span class="text-primary">#</span> About Me
+        <span class="text-primary">#</span> <span data-i18n="about.title">About Me</span>
       </div>
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div>
           <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">
             Samuel Criado Romero
           </h2>
-          <p class="text-muted-foreground mb-2">Granada, Spain</p>
-          <p class="text-muted-foreground">Backend developer with experience in Django, Flask and FastAPI, focused on creating <span class="python-text">reliable and scalable APIs</span>.</p>
+          <p class="text-muted-foreground mb-2" data-i18n="about.location">Granada, Spain</p>
+          <p class="text-muted-foreground" data-i18n-html="about.lead">ABAP backend developer in training — <strong>ABAP Cloud</strong>, <strong>RAP</strong>, and <strong>SAP BTP</strong>, with a strong foundation in Python APIs and integration.</p>
         </div>
         <div class="space-y-6 text-muted-foreground leading-relaxed">
-          <p>I design and build backend systems that power modern applications. From RESTful APIs to web scrapers, I focus on clean, maintainable code and solid architecture.</p>
+          <p data-i18n="about.p1">I'm training as an ABAP backend developer: RESTful ABAP, RAP, CDS views, and SAP BTP fundamentals. My prior work on scalable APIs, data pipelines, and integrations transfers well to enterprise backend roles.</p>
           <div class="code-block mt-8">
             <code class="text-sm">
-              <span class="text-muted-foreground">&gt;&gt;&gt;</span> <span class="text-primary">print</span>(experience)
+              <span class="text-muted-foreground">&gt;&gt;&gt;</span> <span class="text-primary" data-i18n="about.sapFocusLabel">print(sap_focus)</span>
               <br /><br />
-              <span class="text-accent">→</span> API Development (Django REST Framework, Django Ninja)
-              <br />
-              <span class="text-accent">→</span> Web Scraping & Data Pipelines
-              <br />
-              <span class="text-accent">→</span> Database Design
-              <br />
-              <span class="text-accent">→</span> Unit & Integration Testing
-              <br />
-              <span class="text-accent">→</span> Virtual networks & firewall rules
+              <span id="about-sap-focus-list"></span>
             </code>
           </div>
           <div class="code-block mt-4">
             <code class="text-sm">
-              <span class="text-muted-foreground">&gt;&gt;&gt;</span> <span class="text-primary">print</span>(devops_chores)
+              <span class="text-muted-foreground">&gt;&gt;&gt;</span> <span class="text-primary" data-i18n="about.transferableLabel">print(transferable_skills)</span>
               <br /><br />
-              <span class="text-accent">→</span> Containerization (Docker, images & compose)
-              <br />
-              <span class="text-accent">→</span> Virtual disks, volumes & backups
-              <br />
-              <span class="text-accent">→</span> CI/CD & deployment pipelines
+              <span id="about-transferable-list"></span>
             </code>
           </div>
         </div>
@@ -148,18 +161,15 @@
   <section id="experience" class="py-32 px-6 bg-card/30">
     <div class="container mx-auto max-w-4xl">
       <div class="section-title">
-        <span class="text-primary">#</span> Work Experience
+        <span class="text-primary">#</span> <span data-i18n="experience.title">Work Experience</span>
       </div>
       <div class="space-y-12">
         <div class="flex gap-4 border-l-2 border-primary pl-6">
           <img src="assets/syncronik_dark.webp" alt="Syncronik" class="w-12 h-12 rounded-lg shrink-0 object-contain" width="48" height="48" />
           <div>
-            <h3 class="text-xl font-bold text-foreground">Django Backend Developer (APIs, testing, DevOps)</h3>
-            <p class="text-muted-foreground text-sm mt-1">Syncronik · Internship · Sep 2023 – Nov 2023</p>
-            <ul class="mt-4 space-y-2 text-muted-foreground text-sm list-disc list-inside">
-              <li>Designed and developed scalable APIs with Django REST Framework.</li>
-              <li>Unit and integration tests; code and API documentation.</li>
-            </ul>
+            <h3 class="text-xl font-bold text-foreground" data-i18n="experience.syncronik.title">Django Backend Developer (APIs, testing, DevOps)</h3>
+            <p class="text-muted-foreground text-sm mt-1" data-i18n="experience.syncronik.period">Syncronik · Internship · Sep 2023 – Nov 2023</p>
+            <ul id="exp-syncronik-list" class="mt-4 space-y-2 text-muted-foreground text-sm list-disc list-inside"></ul>
           </div>
         </div>
         <div class="flex gap-4 border-l-2 border-primary pl-6">
@@ -167,17 +177,11 @@
             <span data-lucide="trending-up" class="w-6 h-6 text-muted-foreground" aria-hidden="true"></span>
           </div>
           <div>
-            <h3 class="text-xl font-bold text-foreground">Backend Developer & Founder</h3>
-            <p class="text-muted-foreground text-sm mt-1">Self-employed · B2B Footwear Wholesale · Remote · Nov 2020 – July 2024</p>
+            <h3 class="text-xl font-bold text-foreground" data-i18n="experience.founder.title">Backend Developer &amp; Founder</h3>
+            <p class="text-muted-foreground text-sm mt-1" data-i18n="experience.founder.period">Self-employed · B2B Footwear Wholesale · Remote · Nov 2020 – July 2024</p>
             <div class="mt-4 space-y-4">
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Sold footwear directly to companies (no web, no storefront). Designed and executed a software ecosystem for <strong>market arbitrage</strong> and wholesale operations, automating profit opportunity detection through real-time data analysis.
-              </p>
-              <ul class="space-y-2 text-muted-foreground text-sm list-disc list-inside">
-                <li><span class="font-semibold text-foreground">Market Arbitrage Systems:</span> Developed Python-based monitoring tools to identify price inefficiencies and execute optimized inventory acquisitions.</li>
-                <li><span class="font-semibold text-foreground">Backend Automation:</span> Built end-to-end pipelines for automated invoicing, logistics, and labeling by integrating third-party carrier APIs.</li>
-                <li><span class="font-semibold text-foreground">Inventory Intelligence:</span> Implemented business logic for demand forecasting, achieving a 20% reduction in stock surplus via data-driven insights.</li>
-              </ul>
+              <p class="text-muted-foreground text-sm leading-relaxed" data-i18n-html="experience.founder.intro"></p>
+              <ul id="exp-founder-list" class="space-y-2 text-muted-foreground text-sm list-disc list-inside"></ul>
             </div>
           </div>
         </div>
@@ -185,107 +189,105 @@
     </div>
   </section>
 
-  <section id="education" class="py-32 px-6 bg-background">
+  <section id="education" class="section-sap px-4 sm:px-6 bg-background">
     <div class="container mx-auto max-w-4xl">
       <div class="section-title">
-        <span class="text-primary">#</span> Education
+        <span class="text-primary">#</span> <span data-i18n="education.title">Education</span>
       </div>
-      <div class="space-y-8">
-        <div class="rounded-lg border border-border bg-card/40 overflow-hidden">
-          <div class="flex gap-4 border-l-2 border-accent pl-6 py-4 pr-6">
-            <img src="assets/nucamp.webp" alt="Nucamp" class="w-12 h-12 rounded-lg shrink-0 object-contain" width="48" height="48" />
+      <div class="space-y-6 sm:space-y-8">
+        <div class="education-card education-card--featured rounded-lg border border-border bg-card/40 overflow-hidden">
+          <div class="education-card__header">
+            <img
+              src="assets/experis_academy.webp"
+              alt="Experis Academy"
+              class="h-12 w-auto max-w-[8.5rem] rounded-lg shrink-0 object-contain"
+              width="120"
+              height="48"
+              loading="lazy"
+              decoding="async"
+            />
             <div>
-              <h3 class="text-xl font-bold text-foreground">Nucamp Coding Bootcamp</h3>
-              <p class="text-muted-foreground text-sm mt-1">Apr 2023 – Jul 2023</p>
+              <h3 class="text-xl font-bold text-foreground" data-i18n="education.experis.title">Experis Academy</h3>
+              <p class="text-muted-foreground text-sm mt-1">
+                <span data-i18n="education.experis.period">Apr 2026 – Jul 2026</span>
+                · <span class="badge-training" data-i18n="education.experis.status">In progress</span>
+              </p>
             </div>
           </div>
-          <div class="border-t border-border pl-6 pr-6 pb-4 space-y-4">
-            <div class="pt-4">
+          <div class="education-card__body">
+            <p class="text-muted-foreground text-sm mb-4" data-i18n="education.experis.summary">Official SAP backend training: ABAP Cloud development, SAP BTP, CAP applications, and Integration Suite. Preparing for C_ABAPD, C_CPE, and C_CPI certifications.</p>
+            <a href="#certifications" class="text-sm text-primary hover:underline" data-i18n="education.experis.link">→ certifications()</a>
+          </div>
+        </div>
+        <div class="education-card education-card--secondary rounded-lg border border-border bg-card/40 overflow-hidden">
+          <div class="education-card__header">
+            <img src="assets/nucamp.webp" alt="Nucamp" class="w-12 h-12 rounded-lg shrink-0 object-contain" width="48" height="48" />
+            <div>
+              <h3 class="text-xl font-bold text-foreground" data-i18n="education.nucamp.title">Nucamp Coding Bootcamp</h3>
+              <p class="text-muted-foreground text-sm mt-1" data-i18n="education.nucamp.period">Apr 2023 – Jul 2023</p>
+            </div>
+          </div>
+          <div class="education-modules">
+            <div class="education-module pt-4 i18n-en">
               <h4 class="font-semibold text-foreground">Back-end Bootcamp (Python, SQL, DevOps)</h4>
               <p class="text-muted-foreground text-sm mt-1">API development with Django, Flask, FastAPI; Django REST Framework; backend web dev; DevOps fundamentals.</p>
             </div>
-            <div>
+            <div class="education-module pt-4 i18n-es hidden">
+              <h4 class="font-semibold text-foreground">Back-end Bootcamp (Python, SQL, DevOps)</h4>
+              <p class="text-muted-foreground text-sm mt-1">APIs con Django, Flask, FastAPI; Django REST Framework; DevOps fundamentals.</p>
+            </div>
+            <div class="education-module i18n-en">
               <h4 class="font-semibold text-foreground">Modern Software Engineering (DevOps, CI/CD, Docker, K8s, cloud)</h4>
               <p class="text-muted-foreground text-sm mt-1">CI/CD, Docker, Kubernetes; AWS, Google Cloud, Azure; Jenkins, GitHub Actions; agile.</p>
             </div>
-            <div>
+            <div class="education-module i18n-es hidden">
+              <h4 class="font-semibold text-foreground">Ingeniería de software moderna (DevOps, CI/CD, Docker, K8s, cloud)</h4>
+              <p class="text-muted-foreground text-sm mt-1">CI/CD, Docker, Kubernetes; AWS, Google Cloud, Azure; Jenkins, GitHub Actions; agile.</p>
+            </div>
+            <div class="education-module i18n-en">
               <h4 class="font-semibold text-foreground">SQL and Data (modeling with Python)</h4>
               <p class="text-muted-foreground text-sm mt-1">SQL, data modeling; ORM; API and backend context.</p>
             </div>
+            <div class="education-module i18n-es hidden">
+              <h4 class="font-semibold text-foreground">SQL y datos (modelado con Python)</h4>
+              <p class="text-muted-foreground text-sm mt-1">SQL, modelado de datos; ORM; contexto API y backend.</p>
+            </div>
           </div>
         </div>
-        <div class="border-l-2 border-accent pl-6">
-          <h3 class="text-xl font-bold text-foreground">Associate Degree — Web Apps Development</h3>
-          <p class="text-muted-foreground text-sm mt-1">IES Francisco Ayala, Spain · 2017–2019 <span class="text-muted-foreground/80">(unfinished)</span></p>
+        <div class="border-l-2 border-accent pl-6 education-card--secondary">
+          <h3 class="text-xl font-bold text-foreground" data-i18n="education.ies.title">Associate Degree — Web Apps Development</h3>
+          <p class="text-muted-foreground text-sm mt-1">
+            <span data-i18n="education.ies.period">IES Francisco Ayala, Spain · 2017–2019</span>
+            <span class="text-muted-foreground/80" data-i18n="education.ies.note"> (unfinished)</span>
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="skills" class="py-32 px-6 bg-card/30">
+  <section id="certifications" class="section-sap px-4 sm:px-6 bg-card/30">
     <div class="container mx-auto max-w-6xl">
       <div class="section-title text-center">
-        <span class="text-primary">#</span> Skills & Technologies
+        <span class="text-primary">#</span> <span data-i18n="certifications.title">Certifications</span>
       </div>
-      <div class="max-w-4xl mx-auto space-y-10">
-        <div>
-          <h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Languages</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">Python</span>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Backend & APIs</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">Django</span>
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">Flask</span>
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">FastAPI</span>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Databases</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">MySQL</span>
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">PostgreSQL</span>
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">MongoDB</span>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Task queue & Scraping</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">Scrapy</span>
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">Celery</span>
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">Redis</span>
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">Flower</span>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Cloud</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">AWS</span>
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">Google Cloud</span>
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">Azure</span>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">DevOps & Tools</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">Git</span>
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">Docker</span>
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">Kubernetes</span>
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">GitHub Actions</span>
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">Grafana</span>
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">Loki</span>
-            <span class="skill-card inline-flex px-4 py-2 text-foreground group-hover:text-primary transition-colors">Prometheus</span>
-          </div>
-        </div>
+      <p class="certifications-subtitle" data-i18n="certifications.subtitle">Experis Academy · In preparation · Apr–Jul 2026</p>
+      <div id="certifications-content"></div>
+    </div>
+  </section>
+
+  <section id="skills" class="section-sap px-4 sm:px-6 bg-background">
+    <div class="container mx-auto max-w-6xl">
+      <div class="skills-section-title section-title">
+        <span><span class="text-primary">#</span> <span data-i18n="skills.title">Skills &amp; Technologies</span></span>
+        <span class="badge-training" data-i18n="skills.inTrainingBadge">In training</span>
       </div>
+      <div id="skills-groups" class="max-w-4xl mx-auto space-y-10"></div>
       <div class="mt-16 text-center">
         <div class="code-block inline-block text-left">
           <code class="text-sm">
             <span class="text-muted-foreground">&gt;&gt;&gt;</span> <span class="text-primary">type</span>(me)
             <br />
-            <span class="text-accent">'BackendDeveloper'</span>
+            <span class="text-accent" data-i18n="skills.typeMe">'SAPBackendDeveloper'  # ABAP Cloud · BTP — in training</span>
           </code>
         </div>
       </div>
@@ -295,16 +297,14 @@
   <section id="projects" class="py-32 px-6 sm:px-8 lg:px-12 bg-background">
     <div class="container mx-auto max-w-6xl px-2 sm:px-4">
       <div class="section-title text-center">
-        <span class="text-primary">#</span> Featured Projects
+        <span class="text-primary">#</span> <span data-i18n="projects.title">Side Projects</span>
       </div>
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
-          Two projects, <span class="python-text">one ecosystem</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4" data-i18n-html="projects.ecosystemTitle">
+          Two projects, <span class="sap-text">one ecosystem</span>
         </h2>
-        <p class="text-muted-foreground max-w-2xl mx-auto">
-          A demonstration of how backend systems can work together seamlessly.
-          FootyCollect uses FKApi to automatically import football kit data,
-          creating a unified experience for collectors.
+        <p class="text-muted-foreground max-w-2xl mx-auto" data-i18n="projects.subtitle">
+          Technical portfolio from my Python backend work — demonstrates API design, service integration, and data pipelines. Skills transferable to SAP backend and integration work.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-8 mb-12">
@@ -315,11 +315,8 @@
             </div>
             <span data-lucide="arrow-right" class="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" aria-hidden="true"></span>
           </div>
-          <h3 class="text-2xl font-bold text-foreground mb-3">FKApi</h3>
-          <p class="text-muted-foreground mb-4">
-            Web scraper and API for footballkitarchive.com. Extracts kit images,
-            club logos, seasons, and detailed metadata.
-          </p>
+          <div class="flex flex-wrap items-center gap-2 mb-3"><h3 class="text-2xl font-bold text-foreground">FKApi</h3><span class="badge-training text-xs" data-i18n="projects.preSapBadge">Pre-SAP</span></div>
+<p class="text-muted-foreground mb-4" data-i18n="projects.fkapiCard">Web scraper and API for footballkitarchive.com. Extracts kit images, club logos, seasons, and detailed metadata.</p>
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="px-2 py-1 text-xs bg-secondary text-secondary-foreground rounded">Python</span>
             <span class="px-2 py-1 text-xs bg-secondary text-secondary-foreground rounded">Django</span>
@@ -350,10 +347,8 @@
             </div>
             <span data-lucide="arrow-right" class="w-5 h-5 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all" aria-hidden="true"></span>
           </div>
-          <h3 class="text-2xl font-bold text-foreground mb-3">FootyCollect</h3>
-          <p class="text-muted-foreground mb-4">
-            Django app for cataloging football memorabilia: jerseys, shorts, outerwear, tracksuits. FKApi integration, photo management, search, user profiles, REST API (OpenAPI).
-          </p>
+          <div class="flex flex-wrap items-center gap-2 mb-3"><h3 class="text-2xl font-bold text-foreground">FootyCollect</h3><span class="badge-training text-xs" data-i18n="projects.preSapBadge">Pre-SAP</span></div>
+<p class="text-muted-foreground mb-4" data-i18n="projects.fcCard">Django app for cataloging football memorabilia: jerseys, shorts, outerwear, tracksuits. FKApi integration, photo management, search, user profiles, REST API (OpenAPI).</p>
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="px-2 py-1 text-xs bg-secondary text-secondary-foreground rounded">Python</span>
             <span class="px-2 py-1 text-xs bg-secondary text-secondary-foreground rounded">Django</span>
@@ -384,6 +379,9 @@
           <span class="text-foreground">footballkitarchive</span>
           <br /><br />
           <span class="text-muted-foreground"># Returns: kits, logos, seasons, metadata</span>
+          <br /><br />
+          <span class="text-muted-foreground i18n-en" data-i18n="projects.futureNote"># Future: SAP backend projects · Integration Suite · ABAP Cloud apps</span>
+          <span class="text-muted-foreground i18n-es hidden" data-i18n="projects.futureNote"># Futuro: proyectos backend SAP · Integration Suite · apps ABAP Cloud</span>
         </code>
       </div>
     </div>
@@ -394,7 +392,7 @@
       <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
         <div class="lg:col-span-5 order-2 lg:order-1 rounded-2xl bg-card/80 p-6 lg:p-8 shadow-lg">
           <div class="section-title">
-            <span class="text-primary">#</span> Project 01
+            <span class="text-primary">#</span> <span data-i18n="projects.project01">Project 01</span>
           </div>
           <div class="flex flex-wrap items-center gap-3 mb-6">
             <h2 class="text-4xl md:text-5xl font-bold text-foreground">
@@ -405,10 +403,10 @@
               <span>GitHub</span>
             </a>
           </div>
-          <p class="text-muted-foreground text-lg mb-8 leading-relaxed">
+          <p class="text-muted-foreground text-lg mb-8 leading-relaxed" data-i18n="projects.fkapiDesc">
             Django-based REST API that provides access to a comprehensive database of football kit information. Scrapes and aggregates data from public sources with ethical scraping (rate limiting, robots.txt). Built for developers and collectors.
           </p>
-          <div class="project-features project-features--primary space-y-4 mb-8">
+          <div id="fkapi-features" class="project-features project-features--primary space-y-4 mb-8">
             <div class="flex items-start gap-4">
               <div class="p-2 bg-primary/10 rounded-lg mt-1">
                 <span data-lucide="globe" class="w-5 h-5 text-primary" aria-hidden="true"></span>
@@ -438,7 +436,7 @@
             </div>
           </div>
           <div class="mb-6">
-            <p class="text-xs text-muted-foreground uppercase tracking-wider mb-2">Technologies</p>
+            <p class="text-xs text-muted-foreground uppercase tracking-wider mb-2" data-i18n="projects.technologies">Technologies</p>
             <div class="flex flex-wrap gap-2" aria-label="Technology icons">
               <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg" alt="Python" class="tech-icon w-10 h-10 rounded-lg" width="40" height="40" />
               <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/django.svg" alt="Django" class="tech-icon w-10 h-10 rounded-lg" width="40" height="40" />
@@ -481,7 +479,7 @@
         </div>
         <div class="lg:col-span-5 order-1 lg:order-1 rounded-2xl bg-card/80 p-6 lg:p-8 shadow-lg">
           <div class="section-title">
-            <span class="text-accent">#</span> Project 02
+            <span class="text-accent">#</span> <span data-i18n="projects.project02">Project 02</span>
           </div>
           <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
             <span class="text-accent footycollect-glow">FootyCollect</span>
@@ -489,17 +487,17 @@
           <div class="project-actions mb-6">
             <a href="https://footycollect-demo.sunr4y.dev/" target="_blank" rel="noopener" class="demo-cta" aria-label="FootyCollect demo">
               <span data-lucide="external-link" class="demo-cta-icon" aria-hidden="true"></span>
-              <span class="demo-glow-text">View demo</span>
+              <span class="demo-glow-text" data-i18n="projects.viewDemo">View demo</span>
             </a>
             <a href="https://github.com/sunr4y/FootyCollect" target="_blank" rel="noopener noreferrer" class="project-actions-gh" aria-label="FootyCollect on GitHub">
               <span data-lucide="github" class="w-4 h-4" aria-hidden="true"></span>
               <span>GitHub</span>
             </a>
           </div>
-          <p class="text-muted-foreground text-lg mb-8 leading-relaxed">
+          <p class="text-muted-foreground text-lg mb-8 leading-relaxed" data-i18n="projects.fcDesc">
             Django-based platform for football memorabilia collectors to catalog, organize, and manage collections. Supports jerseys, shorts, outerwear, and tracksuits. Integrates with FKApi for automatic kit addition when fkapi is running.
           </p>
-          <div class="project-features project-features--accent space-y-4 mb-8">
+          <div id="fc-features" class="project-features project-features--accent space-y-4 mb-8">
             <div class="flex items-start gap-4">
               <div class="p-2 bg-accent/10 rounded-lg mt-1">
                 <span data-lucide="layers" class="w-5 h-5 text-accent" aria-hidden="true"></span>
@@ -529,7 +527,7 @@
             </div>
           </div>
           <div class="mb-6">
-            <p class="text-xs text-muted-foreground uppercase tracking-wider mb-2">Technologies</p>
+            <p class="text-xs text-muted-foreground uppercase tracking-wider mb-2" data-i18n="projects.technologies">Technologies</p>
             <div class="flex flex-wrap gap-2" aria-label="Technology icons">
               <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg" alt="Python" class="tech-icon w-10 h-10 rounded-lg" width="40" height="40" />
               <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/django.svg" alt="Django" class="tech-icon w-10 h-10 rounded-lg" width="40" height="40" />
@@ -556,14 +554,13 @@
   <section id="contact" class="py-32 px-6 bg-card/30">
     <div class="container mx-auto max-w-4xl text-center">
       <div class="section-title">
-        <span class="text-primary">#</span> Get in Touch
+        <span class="text-primary">#</span> <span data-i18n="contact.title">Get in Touch</span>
       </div>
-      <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6">
-        Let's build something <span class="python-text">together</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6" data-i18n-html="contact.heading">
+        Let's build something <span class="sap-text">together</span>
       </h2>
-      <p class="text-muted-foreground mb-12 max-w-xl mx-auto">
-        Interested in working together or have a project in mind?
-        I'm always open to discussing new opportunities.
+      <p class="text-muted-foreground mb-12 max-w-xl mx-auto" data-i18n="contact.subtitle">
+        Open to SAP backend opportunities, internships, and junior ABAP Cloud / BTP roles. Also happy to discuss integration and API projects.
       </p>
       <div class="flex justify-center gap-6 mb-12">
         <a href="mailto:samucriado@gmail.com" class="p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-all duration-300 group" aria-label="Email">
@@ -579,7 +576,7 @@
       <p class="text-muted-foreground text-sm mb-4">samucriado@gmail.com · Granada, Spain</p>
       <div class="code-block inline-block text-left">
         <code class="text-sm">
-          <span class="text-muted-foreground">&gt;&gt;&gt;</span> <span class="text-primary">print</span>(<span class="text-accent">"Thanks for visiting!"</span>)
+          <span class="text-muted-foreground">&gt;&gt;&gt;</span> <span class="text-primary">print</span>(<span class="text-accent" data-i18n="contact.thanks">Thanks for visiting!</span>)
           <span class="python-cursor"></span>
         </code>
       </div>
@@ -589,12 +586,14 @@
 
   <footer class="py-8 px-6 border-t border-border">
     <div class="container mx-auto text-center text-sm text-muted-foreground">
-      <code><span class="text-muted-foreground">#</span> © 2026</code>
+      <code><span class="text-muted-foreground">#</span> <span data-i18n="footer.copyright">© 2026</span></code>
     </div>
   </footer>
 
-  <noscript><p class="p-4 text-center text-muted-foreground bg-muted/50">This site uses JavaScript for icons and interactive content. Please enable JavaScript for the full experience.</p></noscript>
+  <noscript><p class="p-4 text-center text-muted-foreground bg-muted/50"><span data-i18n="noscript">This site uses JavaScript for icons and interactive content. Please enable JavaScript for the full experience.</span></p></noscript>
   <script src="https://unpkg.com/lucide@0.563.0/dist/umd/lucide.min.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script type="module" src="js/portfolio-dynamic.js" defer></script>
   <script src="js/init.js" defer></script>
   <script src="js/app.js" defer></script>
   <script type="module" src="js/scene-init.js"></script>
