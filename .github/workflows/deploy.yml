@@ -47,3 +47,4 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             git checkout main
+            rm -rf node_modules
