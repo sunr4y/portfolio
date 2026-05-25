@@ -34,7 +34,6 @@
       },
       about: {
         title: "About Me",
-        displayName: "Samuel Criado",
         location: "Granada, Spain",
         lead: 'ABAP backend developer in training — <strong>ABAP Cloud</strong>, <strong>RAP</strong>, and <strong>SAP BTP</strong>, with a strong foundation in Python APIs and integration.',
         p1: "I'm training as an ABAP backend developer: RESTful ABAP, RAP, CDS views, and SAP BTP fundamentals. My prior work on scalable APIs, data pipelines, and integrations transfers well to enterprise backend roles.",
@@ -255,7 +254,6 @@
       },
       about: {
         title: "Sobre mí",
-        displayName: "Samuel Criado",
         location: "Granada, España",
         lead: 'Desarrollador ABAP backend en formación — <strong>ABAP Cloud</strong>, <strong>RAP</strong> y <strong>SAP BTP</strong>, con una base sólida en APIs Python e integración.',
         p1: "Me estoy formando como desarrollador ABAP backend: RESTful ABAP, RAP, vistas CDS y fundamentos de SAP BTP. Mi experiencia previa con APIs escalables, pipelines de datos e integraciones encaja bien con roles backend en entorno enterprise.",
