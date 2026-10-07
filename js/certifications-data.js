@@ -6,7 +6,7 @@ export const CERTIFICATIONS = [
     descKey: 'certs.abapd.desc',
     chipsKey: 'certs.abapd.chips',
     validityKey: 'certs.abapd.validity',
-    credentialUrl: 'https://www.credly.com/badges/0e0c6e91-03d2-4908-966f-93a17f230dbf/linked_in_profile',
+    credentialUrl: 'https://www.credly.com/badges/0e0c6e91-03d2-4908-966f-93a17f230dbf/public_url',
     icon: 'code-2',
   },
   {
@@ -16,7 +16,7 @@ export const CERTIFICATIONS = [
     descKey: 'certs.cpe.desc',
     chipsKey: 'certs.cpe.chips',
     validityKey: 'certs.cpe.validity',
-    credentialUrl: 'https://www.credly.com/earner/earned/badge/885693c0-b401-48f4-a4c0-a2c790d6d9bc',
+    credentialUrl: 'https://www.credly.com/badges/885693c0-b401-48f4-a4c0-a2c790d6d9bc/public_url',
     icon: 'layers',
   },
   {
@@ -26,7 +26,7 @@ export const CERTIFICATIONS = [
     descKey: 'certs.aig.desc',
     chipsKey: 'certs.aig.chips',
     validityKey: 'certs.aig.validity',
-    credentialUrl: 'https://www.credly.com/earner/earned/badge/a37f1f27-e8bb-42bb-924d-0c5f83593228',
+    credentialUrl: 'https://www.credly.com/badges/a37f1f27-e8bb-42bb-924d-0c5f83593228/public_url',
     icon: 'sparkles',
   },
   {
@@ -36,7 +36,7 @@ export const CERTIFICATIONS = [
     descKey: 'certs.cpi.desc',
     chipsKey: 'certs.cpi.chips',
     validityKey: 'certs.cpi.validity',
-    credentialUrl: 'https://www.credly.com/earner/earned/badge/5c9c3ca7-3c59-4df1-808e-53e6b19e17d9',
+    credentialUrl: 'https://www.credly.com/badges/5c9c3ca7-3c59-4df1-808e-53e6b19e17d9/public_url',
     icon: 'git-branch',
   },
 ];
