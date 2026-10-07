@@ -37,7 +37,8 @@ export function renderCertifications(lang) {
   const container = document.getElementById("certifications-content");
   if (!container) return;
 
-  const badge = escapeHtml(t("certifications.inPrepBadge", lang));
+  const badge = escapeHtml(t("certifications.certifiedBadge", lang));
+  const credentialLabel = escapeHtml(t("certifications.viewCredential", lang));
   const certsHtml = CERTIFICATIONS.map(function (cert) {
     const chips = t(cert.chipsKey, lang);
     const chipsHtml = Array.isArray(chips)
@@ -53,6 +54,8 @@ export function renderCertifications(lang) {
       "</div>" +
       '<h3 class="cert-card-title">' + escapeHtml(t(cert.nameKey, lang)) + "</h3>" +
       '<p class="cert-card-desc">' + escapeHtml(t(cert.descKey, lang)) + "</p>" +
+      '<p class="cert-card-validity">' + escapeHtml(t(cert.validityKey, lang)) + "</p>" +
+      '<a class="cert-credential-link" href="' + escapeHtml(cert.credentialUrl) + '" target="_blank" rel="noopener noreferrer">' + credentialLabel + ' ↗</a>' +
       '<div class="cert-card-chips">' + chipsHtml + "</div>" +
       "</article>"
     );
@@ -83,7 +86,7 @@ export function renderSkills(lang) {
   const container = document.getElementById("skills-groups");
   if (!container) return;
 
-  const trainingBadge = escapeHtml(t("skills.inTrainingBadge", lang));
+  const trainingBadge = escapeHtml(t("skills.statusBadge", lang));
   container.innerHTML = SKILL_GROUPS.map(function (group) {
     const items = t(group.itemsKey, lang);
     const chipsHtml = Array.isArray(items)
