@@ -57,6 +57,21 @@
   margin-bottom: 1rem;
 }
 
+.cert-card-validity {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.cert-credential-link {
+  width: fit-content;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: var(--sap-blue);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .cert-card-chips {
   display: flex;
   flex-wrap: wrap;
